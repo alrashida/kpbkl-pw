@@ -61,22 +61,24 @@
   
   <h2 class="gallery-title">Gallery</h2>
   
-  <div class="gallery">
-    @foreach ($Gallerys as $gallery) 
-    <a href="{{ route('gallery.show', $gallery->id) }}">
-      <div class="container">
-        <img src="{{ asset('galleryimages/'. $gallery->image) }}" alt="Image 1" data-description="Description for Image 1" class="image">
-            <div class="overlay">
-        <div class="text" hidden>
-        <p>{{ $gallery->description }}</p>
-            </div>
+  <div class="gallery-area">
+    <div class="gallery">
+      @foreach ($Gallerys as $gallery) 
+          <div class="container">
+            <a href="{{ route('gallery.show', $gallery->id) }}">
+              <img src="{{ asset('galleryimages/'. $gallery->image) }}" alt="Image 1" data-description="Description for Image 1" class="image">
+            </a>
+              <div class="overlay">              
+                <div class="text">
+                  <h5><b>{{ $gallery->title}}</b></h5>
+                  <p>{{ $gallery->description }}</p>
+              </div>
+              </div>
           </div>
-      </div>
-  </a>
-    @endforeach
-    <!-- Repeat for more images -->
+      @endforeach
+      <!-- Repeat for more images -->
+    </div>
   </div>
-
 
 
 @include('footer')

@@ -298,28 +298,30 @@
   .gallery {
     display: flex;
     flex-wrap: wrap;
+    width: 300px;
   }
   
   .container {
-    position: relative;
-    width: 50%;
+    position: sticky;
+    display: flex;
+    width: 450px;
+    justify-content: center;
   }
   
   .image {
     display: block;
-    width: 100%;
+    width: 450px;
     height: auto;
   }
   
   .overlay {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0px;
     right: 0;
-    background-color: #1b1a2f;
-    opacity: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    width: 100%;
+    width: 450px;
     height: 0;
     transition: .3s ease;
   }
@@ -327,18 +329,46 @@
   .container:hover .overlay {
     height: 100%;
   }
-  
+
+  .gallery .a{
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+  }
+  .gallery-area
+  {
+    display: flex;
+    justify-content: center;
+    max-width: 1700px;
+  }
   .text {
     color: white;
-    font-size: 20px;
-    position: absolute;
+    font-size: 17px;
     top: 50%;
-    left: 50%;
+    left: 39%;
+    position: absolute;
+    width: 298px;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+  .text h5{
+    font-size: 48px;
+    text-align: left;
+    padding-left: 15px;
+    width: 309px;
+    height: auto;
+    border-left: 3px solid #ffb600;
+  }
+
+  .text p
+  {
+    text-align: left;
+    padding-top: 13px;
+    overflow: hidden;
+  } 
 
   body 
   {
