@@ -1,7 +1,7 @@
   
     <div class="navbar-e">
 
-        <img src="{{ asset('image/logo.png') }}" alt="logo"  height="100px" width="78px">
+        <img src="{{ asset('image/headerlogo.png') }}" alt="logo"  height="100px" width="78px">
     
         <a href="{{url('/program')}}" class="{{ Request::is('program')? 'active' : '' }}">Program</a>
         <a href="{{url('/kontak')}}" class="{{ Request::is('kontak')? 'active' : '' }}">Kontak</a>

@@ -67,14 +67,14 @@
           <div class="container">
             <a href="{{ route('gallery.show', $gallery->id) }}">
               <img src="{{ asset('galleryimages/'. $gallery->image) }}" alt="Image 1" data-description="Description for Image 1" class="image">
-            </a>
-              <div class="overlay">              
+              <div class="overlay">
                 <div class="text">
                   <h5><b>{{ $gallery->title}}</b></h5>
                   <p>{{ $gallery->description }}</p>
               </div>
-              </div>
+            </a>
           </div>
+        </div>
       @endforeach
       <!-- Repeat for more images -->
     </div>

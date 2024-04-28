@@ -4,9 +4,13 @@ use App\Http\Controllers\ProgramController;
 
 use App\Http\Controllers\GalleryController;
 
+use App\Http\Controllers\GalleryAddImages;
+
 use App\Models\Program;
 
 use App\Models\Gallery;
+
+use App\Models\GalleryImages;
 
 use Illuminate\Support\Facades\Route;
 
@@ -28,13 +32,26 @@ Route::get('/kontak', function () {
 });
 
 
+Route::get('/gallerycrud', [GalleryController::class, 'crud'])
+->name('gallerycrud');
+
+Route::get('/addimages/{id}/upload', [GalleryAddImages::class, 'index']);
+
+Route::post('/addimages/{id}/upload', [GalleryAddImages::class, 'store']);
+
+Route::get('galleryimage/{id}/delete', [GalleryAddImages::class, 'delete']);
+
+Route::post('/gallery', [GalleryController::class, 'store'])
+->name('gallery.store');
+
+
+
+
 
 
 Route::get('/gallery', [GalleryController::class, 'index'])
 ->name('gallery');
 
-Route::post('/gallery', [GalleryController::class, 'store'])
-->name('gallery.store');
 
 Route::get('/gallery/{id}', [GalleryController::class, 'show'])
 ->name('gallery.show');

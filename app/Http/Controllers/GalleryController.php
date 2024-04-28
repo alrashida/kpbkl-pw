@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
- 
 use App\Models\Gallery;
+use App\Models\GalleryImages;
+
+use Illuminate\Http\Request;
 
 class GalleryController extends Controller
 {
@@ -20,8 +21,14 @@ class GalleryController extends Controller
         return view("gallery-show", compact('Gallery'));
     }
 
+    public function crud()
+    {
+        $Gallery = Gallery::all();
+        return view('adminview.gallerycrud', compact('Gallery'));
+    }
+
     public function store(Request $request)
-{
+    {
     $request->validate([
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'title' => 'required|string',
@@ -42,6 +49,5 @@ class GalleryController extends Controller
     $gallery->save();
 
     return redirect()->route('gallery')->with('success', 'Gallery added successfully!');}
-
 
 }
