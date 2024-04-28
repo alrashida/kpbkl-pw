@@ -298,20 +298,21 @@
   .gallery {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: auto ;
   }
   
   .container {
     position: sticky;
     display: flex;
-    width: 450px;
+    width: 400px;
     justify-content: center;
+    padding-bottom: 10;
   }
   
   .image {
     display: block;
-    width: 450px;
-    height: auto;
+    width: auto;
+    height: 400px;
   }
   
   .overlay {
@@ -321,7 +322,7 @@
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    width: 450px;
+    width: 400px;
     height: 0;
     transition: .3s ease;
   }
@@ -335,12 +336,7 @@
     height: 500px;
     justify-content: center;
   }
-  .gallery-area
-  {
-    display: flex;
-    justify-content: center;
-    max-width: 1700px;
-  }
+
   .text {
     color: white;
     font-size: 17px;
@@ -370,6 +366,12 @@
     overflow: hidden;
   } 
 
+
+
+  .emptyspace
+  {
+    padding-bottom: 34px;
+  }
   body 
   {
     font-family: "Quicksand", sans-serif;

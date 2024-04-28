@@ -61,7 +61,7 @@
   
   <h2 class="gallery-title">Gallery</h2>
   
-  <div class="gallery-area">
+
     <div class="gallery">
       @foreach ($Gallerys as $gallery) 
           <div class="container">
@@ -78,7 +78,11 @@
       @endforeach
       <!-- Repeat for more images -->
     </div>
-  </div>
+
+
+    <div class="emptyspace">
+    </div>
+
 
 
 @include('footer')
