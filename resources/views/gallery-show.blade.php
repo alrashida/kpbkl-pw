@@ -30,13 +30,20 @@
 <body>
   @include('fonts')
   @include('navbar')
-    <div class="program-show">
-        <h1>{{ $Gallery->title }}</h1>
-        <img src="{{ asset('galleryimages/'. $Gallery->image) }}" alt="program image">
-        <div class="program-content">
-          <p>{{ $Gallery->description }}</p>
+  <div class="program-show">
+    <h1>{{ $Gallery->title }}</h1>
+    <img src="/galleryimages/{{$Gallery->image}}" alt="program image">
+    <div class="program-content">
+        <p>{{ $Gallery->description }}</p>
+    </div>
+    @if (!is_null($GalleryImages) && count($GalleryImages) > 0)
+        <div class="gallery-images">
+            @foreach ($GalleryImages as $GalleryImages)
+                <img src="{{asset($GalleryImages->images)}}" alt="gallery image">
+            @endforeach
         </div>
-      </div>
+    @endif
+</div>
 
   @include('footer')
 </body>

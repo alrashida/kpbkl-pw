@@ -15,10 +15,11 @@ class GalleryController extends Controller
         return view("gallery", compact("Gallery"));
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        $Gallery = Gallery::find($id);
-        return view("gallery-show", compact('Gallery'));
+        $Gallery = Gallery::findOrFail($id);
+        $GalleryImages = GalleryImages::where('image_id', $Gallery->id)->get();
+        return view('gallery-show', compact('Gallery', 'GalleryImages'));
     }
 
     public function crud()
